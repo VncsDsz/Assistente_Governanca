@@ -1,0 +1,10 @@
+# Segredos
+.env
+*.local
+
+# Dependências e builds
+**/node_modules/
+**/dist/
+**/target/
+.idea/
+*.iml

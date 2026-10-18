@@ -1,0 +1,28 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  display: block;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color-scheme: light;
+  background: #fff;
+}
+
+/* seletor mais forte que o do template, para garantir que vence */
+body #root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+  text-align: left;
+}

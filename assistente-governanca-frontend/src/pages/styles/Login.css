@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap');
+
+.lg {
+  --navy: #274259;
+  --deep: #264F73;
+  --blue: #2675A6;
+  --sky: #5EA4BF;
+  --cyan: #ACEBF2;
+
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0;
+  background: var(--navy);
+  font-family: 'Manrope', system-ui, sans-serif;
+  display: flex;
+}
+
+.lg-card {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  border-radius: 0;
+  overflow: hidden;
+  background: #fff;
+  min-height: 100vh;
+}
+
+/* ---------- painel da marca ---------- */
+.lg-brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 64px;
+  background: linear-gradient(180deg, var(--blue) 0%, var(--deep) 55%, var(--navy) 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* círculos decorativos no canto inferior esquerdo */
+.lg-brand::before,
+.lg-brand::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(172, 235, 242, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.lg-brand::before { width: 620px; height: 620px; left: -330px; bottom: -430px; }
+.lg-brand::after { width: 560px; height: 560px; left: -200px; bottom: -400px; }
+
+.lg-brand-texto { position: relative; z-index: 1; max-width: 460px; }
+.lg-brand h1 { font-size: clamp(32px, 3.4vw, 46px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 14px; }
+.lg-brand p { font-size: 18px; font-weight: 300; line-height: 1.45; margin: 0 0 28px; }
+
+.lg-brand-link {
+  display: inline-block;
+  padding: 11px 26px;
+  border-radius: 999px;
+  background: var(--cyan);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.lg-brand-link:hover { background: #c6f1f6; }
+.lg-brand-link:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+/* ---------- formulário ---------- */
+.lg-form-area { display: grid; place-items: center; padding: 48px 32px; background: #fff; }
+.lg-form { width: min(380px, 100%); display: grid; gap: 14px; }
+
+.lg-form h2 { font-size: 30px; font-weight: 700; color: var(--navy); margin: 0; letter-spacing: -0.01em; }
+.lg-sub { margin: 0 0 14px; font-size: 16px; color: #4a6577; }
+
+.lg-campo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 54px;
+  padding: 0 22px;
+  border: 1px solid #c9dbe4;
+  border-radius: 999px;
+  background: #fff;
+  color: #6f8a9b;
+}
+.lg-campo:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(38, 117, 166, 0.2);
+  color: var(--blue);
+}
+.lg-campo input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  color: var(--navy);
+}
+.lg-campo input::placeholder { color: #7d95a4; }
+
+.lg-erro { margin: 0; font-size: 14px; color: #b3261e; padding-left: 8px; }
+
+.lg-botao {
+  height: 54px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.lg-botao:hover:not(:disabled) { background: var(--deep); }
+.lg-botao:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.lg-botao:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* texto só para leitores de tela */
+.lg-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 860px) {
+  .lg { padding: 0; }
+  .lg-card { grid-template-columns: 1fr; border-radius: 0; min-height: 100vh; }
+  .lg-brand { padding: 36px 24px; }
+  .lg-brand::before, .lg-brand::after { display: none; }
+  .lg-brand p { margin-bottom: 20px; }
+  .lg-form-area { align-items: start; padding: 36px 24px; }
+}
